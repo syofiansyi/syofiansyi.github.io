@@ -1,37 +1,345 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Profil Saya</title>
-   <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - MyResume Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyResume
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body class="bg-gray-100">
-   <div class="container mx-auto p-4">
-       <header class="text-center bg-gray-800 text-white p-6 rounded-lg shadow-lg">
-           <h1 class="text-4xl font-bold">Nama Anda</h1>
-           <p class="mt-2">Deskripsi Singkat tentang Anda</p>
-       </header>
 
-       <section class="profile bg-white p-6 mt-6 rounded-lg shadow-lg">
-           <img src="profile.jpg" alt="Foto Profil" class="w-32 h-32 rounded-full mx-auto">
-           <h2 class="text-2xl font-semibold mt-4">Tentang Saya</h2>
-           <p class="mt-2">Ini adalah tempat untuk menjelaskan tentang diri Anda, hobi, pekerjaan, atau apa pun yang ingin Anda bagikan.</p>
-       </section>
+<body class="index-page">
 
-       <section class="skills bg-white p-6 mt-6 rounded-lg shadow-lg">
-           <h2 class="text-2xl font-semibold">Keterampilan</h2>
-           <ul class="list-disc list-inside mt-2">
-               <li>Keterampilan 1</li>
-               <li>Keterampilan 2</li>
-               <li>Keterampilan 3</li>
-               <li>Keterampilan 4</li>
-           </ul>
-       </section>
+  <header id="header" class="header d-flex flex-column justify-content-center">
 
-       <footer class="text-center mt-6">
-           <p class="text-gray-600">&copy; 2023 Nama Anda. Semua hak dilindungi.</p>
-       </footer>
-   </div>
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
+    
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+
+      <img src="assets/img/hero-bg.jpg" alt="">
+
+      <div class="container" data-aos="zoom-out">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <h2>Syofian Irwanda</h2>
+            <p>I'm <span class="typed" data-typed-items="Web Developer, Web Developer">Web Developer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <div class="social-links">
+              <a href="https://www.instagram.com/syofianirwanda/"><i class="bi bi-instagram"></i></a>
+              <a href="https://id.linkedin.com/in/syofian-irwanda-4b564a249"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p class="about" style="text-align: justify;">
+          As an Application Support and Web Developer, I have expertise in supporting
+applications and developing websites with a primary focus on performance,
+security, and user satisfaction. I am proficient in managing various
+technologies and frameworks, especially in web application development
+using Laravel and CodeIgniter.
+
+I have experience using Git for code version control, as well as managing databases with external
+tools such as DBeaver, Navicat, and phpMyAdmin. In addition, I was also able to leverage Docker
+to create a consistent development environment, as well as make it easier to manage application
+dependencies in containers.
+I pay great attention to the user experience aspect in website development, including in the selection
+of a color scheme that is comfortable for users. In every project, I am always committed to
+maintaining the efficiency, effectiveness, and reliability of the systems I manage, with the aim of
+providing optimal and satisfactory solutions for users.
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 content">
+            <h2 class="m-2">Web Developer.</h2>
+            <div class="row">
+              <div class="col-lg-8">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+62895424010064</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Bali, Denpasar</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor Of Informatics
+                  </span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>Syofianirwanda21@gmail.com</span></li>
+                </ul>
+              </div>
+              
+            </div>
+          
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row skills-content skills-animation">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>PHP</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>WordPress/CMS</span> <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Professional Experience</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title"></h3>
+            <div class="resume-item">
+              <p><b>Developer Thesis Management Information System
+                Application Universitas Bengkulu</b></p>
+              <p>September - December 2019</p>
+              <p style="text-align: justify;">The development of the Thesis Management Information System
+                application for the University of Bengkulu is my internship
+                project in the Non-Formal Education study program at the
+                University of Bengkulu. This application is designed to facilitate
+                the thesis management process, starting from registration,
+                scheduling guidance, to thesis submission and assessment by
+                supervisors and examiners. The purpose of the application is
+                developer to support a more efficient and structured academic
+                process.</p>
+            </div><!-- Edn Resume Item -->
+            <div class="resume-item">
+              <p><b>IT Helpdesk, PT Indocyber Global Teknologi</b></p>
+              <p>December 2022 - June 2023</p>
+              <p style="text-align: justify;">As an IT Helpdesk at PT Indocyber Global Teknologi, I am
+                responsible for providing technical support to Indocyber clients.
+                My main duties are to handle and resolve technical issues
+                reported by users, provide technical assistance through various
+                media, such as phone, email, or chat, and ensure an optimal user
+                experience. This position involves working closely with internal
+                teams and clients to ensure that all IT needs are handled
+                efficiently and effectively.</p>
+            </div><!-- Edn Resume Item -->
+            <div class="resume-item">
+              <p><b>Tableau Workshop Participant and Trainer</b></p>
+              <p>October 2023</p>
+              <p style="text-align: justify;">I was assigned to Tableau training to deepen my skills in data
+                visualization. After completing the training, I switched to
+                Tableau Workshop Trainer, where I taught Tableau techniques
+                to my corporate friends. In this role, I manage training sessions,
+                guide participants in using Tableau, and help them leverage these
+                tools for more effective data analysis.</p>
+            </div><!-- Edn Resume Item -->
+            <div class="resume-item">
+              <p><b>PHP and MySQL Trainer SMKN 6 Jakarta</b></p>
+              <p>July 2024</p>
+              <p style="text-align: justify;">I prepared and compiled basic training materials about PHP and
+                MySQL as teaching materials for students from SMKN 6 Jakarta
+                who are undergoing internships at PT PLN Icon Plus. This
+                teaching aims to equip students with solid foundational skills in
+                web development and database management, preparing them for
+                success in an internship environment and industry experience at
+                PT PLN Icon Plus.</p>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title"></h3>
+            <div class="resume-item">
+              <p><b>Developer Cashier Application, TK Grosir Enggal
+                Mulya</b></p>
+              <p>June 2023 - July 2023</p>
+              <p style="text-align: justify;">Enggal Mulya, is a grocery store that provides household staples,
+                food and soft drinks. Previously, Grosir Enggal Mulya
+                Kindergarten already had its own cashier application, but it still
+                could not meet its operational needs, so this application was
+                designed to improve operational efficiency and provide ease in
+                transaction and inventory management for Grosir Enggal Mulya
+                Kindergarten.</p>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <p><b>Technical Support, PT PLN Icon Plus</b></p>
+              <p>November 2023 - Present</p>
+              <p style="text-align: justify;">As a Technical Support at PT PLN Icon Plus, I occupy a position
+                as Technical Support Grade 2 with the task and responsibility to
+                provide technical support and solutions to customers who
+                experience problems using the PLN application. This position
+                involves collaborating with the STI division, Developer and PBO
+                to ensure that all technical needs are met and the system operates
+                efficiently and reliably.</p>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <p><b>Developer E-SPPD Tools Application, PT PLN Icon
+                Plus</b></p>
+              <p>January 2024 - March 2024</p>
+              <p style="text-align: justify;">In this project, I was responsible for developing the E-SPPD
+                Tools application, a system designed to assist the main
+                application, E-SPPD, in developing and maintaining, so that it
+                can more effectively and efficiently handle user needs.</p>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Portfolio Section -->
+   
+    <!-- Services Section -->
+
+
+    <!-- Testimonials Section -->
+   
+    
+  </main>
+
+  <footer id="footer" class="footer position-relative dark-background">
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
