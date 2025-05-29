@@ -1,1543 +1,859 @@
-<html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Properti Apart
-  </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet"/>
-  <style>
-   body {
-      font-family: 'Poppins', sans-serif;
-    }
-    /* Custom scrollbar for horizontal scroll in offers */
-    .scrollbar-hide::-webkit-scrollbar {
-      display: none;
-    }
-    .scrollbar-hide {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
- </head>
- <body class="bg-white text-black">
-  <!-- Header -->
-  <header class="border-b border-gray-300">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <nav class="flex items-center justify-between h-16">
-     <div class="flex items-center space-x-4">
-      <div class="flex items-center space-x-1 border-r border-gray-300 pr-4">
-       <i class="fas fa-ship text-black text-lg">
-       </i>
-       <span class="font-semibold text-black text-lg">
-        Properti
-       </span>
-      </div>
-      <ul class="hidden md:flex space-x-6 text-sm font-normal text-black">
-       <li class="relative group">
-        <button class="flex items-center space-x-1 text-sm text-[#9b7e4f] font-normal">
-         <span>
-          Home
-         </span>
-       
-        </button>
-       </li>
-       <li class="relative group">
-        <button class="flex items-center space-x-1 text-sm text-black font-normal">
-         <span>
-          Properti
-         </span>
-         
-        </button>
-       </li>
-      
-       <li class="relative group">
-        <button class="flex items-center space-x-1 text-sm text-black font-normal">
-         <span>
-          Faq
-         </span>
-       
-        </button>
-       </li>
-       <li>
-        <a class="text-sm text-black font-normal" href="#">
-         Contact
-        </a>
-       </li>
-      </ul>
-     </div>
-     <div class="flex items-center space-x-6">
-      <button class="flex items-center space-x-1 text-sm text-black font-normal">
-       <span>
-        Language
-       </span>
-       <i class="fas fa-chevron-down text-xs">
-       </i>
-      </button>
-      <button class="relative text-black">
-       <i class="fas fa-shopping-cart text-lg">
-       </i>
-       <span class="absolute -top-1 -right-2 bg-[#9b7e4f] text-white text-[10px] font-semibold rounded-full w-4 h-4 flex items-center justify-center">
-        0
-       </span>
-      </button>
-      <button class="bg-[#9b7e4f] text-white text-sm font-semibold rounded-full px-4 py-1.5 whitespace-nowrap">
-       Book Now
-      </button>
-     </div>
-    </nav>
-   </div>
-  </header>
-  <!-- Hero Section -->
-  <section class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-   <img alt="Modern beachfront hotel exterior at sunset with pool and palm trees" class="w-full rounded-md object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/540b6a49-8c53-4f91-4675-054ab912685c.jpg" width="1440"/>
-   <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4" style="top: 0; left: 0; right: 0; bottom: 0;">
-    <h1 class="text-white font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight max-w-3xl drop-shadow-md">
-     The Perfect Beachfront Destination
-    </h1>
-    <p class="text-white text-xs sm:text-sm font-semibold mt-1 drop-shadow-md">
-     Experience A Refreshing Approach To Your Stay At The Beach Hotel
-    </p>
-   </div>
-   <!-- Search Bar -->
-   <form aria-label="Booking search form" class="absolute bottom-[-24px] left-1/2 transform -translate-x-1/2 w-full max-w-5xl bg-white rounded-full shadow-md flex items-center px-4 py-2 space-x-6" style="backdrop-filter: blur(10px);">
-    <div class="flex items-center space-x-2 min-w-[180px]">
-     <i class="far fa-calendar-alt text-gray-600 text-lg">
-     </i>
-     <div class="text-xs text-gray-700 leading-tight">
-      <div class="font-semibold">
-       Checkin - Checkout
-      </div>
-      <div class="text-[10px] text-gray-500">
-       2025/05/29 2025/05/30
-      </div>
-     </div>
-    </div>
-    <div class="flex items-center space-x-2 min-w-[120px]">
-     <i class="fas fa-user text-gray-600 text-lg">
-     </i>
-     <div class="text-xs text-gray-700 leading-tight">
-      <div class="font-semibold">
-       Adults
-      </div>
-      <div class="text-[10px] text-gray-500">
-       1 Adults
-      </div>
-     </div>
-    </div>
-    <div class="flex items-center space-x-2 min-w-[120px]">
-     <i class="fas fa-child text-gray-600 text-lg">
-     </i>
-     <div class="text-xs text-gray-700 leading-tight">
-      <div class="font-semibold">
-       Children
-      </div>
-      <div class="text-[10px] text-gray-500">
-       0 Children
-      </div>
-     </div>
-    </div>
-    <button aria-label="Search" class="ml-auto bg-[#9b7e4f] text-white rounded-full p-2 w-10 h-10 flex items-center justify-center" type="submit">
-     <i class="fas fa-search">
-     </i>
-    </button>
-   </form>
-  </section>
-  <!-- Offers To Inspire You -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-   <h2 class="text-lg font-semibold mb-6">
-    Higlight
-   </h2>
-   <div aria-label="Offers to inspire you" class="flex space-x-6 overflow-x-auto scrollbar-hide pb-2">
-    <!-- Offer 1 -->
-    <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Family of three walking on green grass in front of modern house" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/ee1a7fb8-2344-4f46-672e-ae7d08e8fd32.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Family Escape
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Children eat free, exciting fun activities.
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-    <!-- Offer 2 -->
-    <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Woman working on laptop with coffee cup at window table" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/075ffd40-5f84-4ae6-9fc5-6a045d856a72.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Business Trip
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Up to 20% off food and services
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-    <!-- Offer 3 -->
-    <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Couple enjoying drinks on balcony with flowers and sunset light" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/9c271e43-dcff-4cd7-2823-2715adc00f0b.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Romance
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Discount room rates, reward points
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-       <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Couple enjoying drinks on balcony with flowers and sunset light" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/9c271e43-dcff-4cd7-2823-2715adc00f0b.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Romance
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Discount room rates, reward points
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-       <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Couple enjoying drinks on balcony with flowers and sunset light" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/9c271e43-dcff-4cd7-2823-2715adc00f0b.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Romance
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Discount room rates, reward points
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-   </div>
-  </section>
-  <!-- Our Rooms & Suites -->
- <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16 jus">
-   <h2 class="text-lg font-semibold mb-6">
-    Our Rooms &amp; Suites
-   </h2>
-   <div class="relative">
-    <div class="flex space-x-6 overflow-x-auto scrollbar-hide pb-2">
-     <!-- Room 1 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-      <div class="relative">
-       <img alt="Deluxe King Room with balcony showing bed and window" class="w-full h-[160px] object-cover rounded-t-md" height="160" src="https://storage.googleapis.com/a1aa/image/85ea0e56-685a-4706-3fce-b5e8779a0511.jpg" width="260"/>
-       <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-semibold rounded px-2 py-0.5">
-        Featured
-       </div>
-       <div class="absolute top-2 right-2 bg-pink-300 text-pink-700 text-[10px] font-semibold rounded px-2 py-0.5">
-        Double Room
-       </div>
-      </div>
-      <div class="p-3 text-[11px] text-gray-700">
-       <h3 class="font-semibold text-xs mb-1">
-        Deluxe King Room With Balcony
-       </h3>
-       <ul class="space-y-0.5 mb-2">
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-star text-yellow-400 text-xs">
-         </i>
-         <span>
-          4.5/5
-         </span>
-         <span class="text-gray-400">
-          (2 reviews)
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-ruler-combined text-gray-400 text-xs">
-         </i>
-         <span>
-          Room Size: 50Sqm
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-bed text-gray-400 text-xs">
-         </i>
-         <span>
-          Bed: 1 beds
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-user-friends text-gray-400 text-xs">
-         </i>
-         <span>
-          Max: 6 adults
-         </span>
-        </li>
-       </ul>
-       <div class="flex justify-between items-center text-[10px]">
-        <span class="font-semibold">
-         $110.0
-        </span>
-        <span class="text-[#9b7e4f] cursor-pointer">
-         View Detail
-        </span>
-       </div>
-      </div>
-     </article>
-     <!-- Room 2 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-      <div class="relative">
-       <img alt="American Parks Trail End Rapid City room with bed and dark wall" class="w-full h-[160px] object-cover rounded-t-md" height="160" src="https://storage.googleapis.com/a1aa/image/f2594eb6-bd08-4a7d-e341-8fd23c56db09.jpg" width="260"/>
-       <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-semibold rounded px-2 py-0.5">
-        Featured
-       </div>
-       <div class="absolute top-2 right-2 bg-pink-300 text-pink-700 text-[10px] font-semibold rounded px-2 py-0.5">
-        Double Room
-       </div>
-      </div>
-      <div class="p-3 text-[11px] text-gray-700">
-       <h3 class="font-semibold text-xs mb-1">
-        American Parks Trail End Rapid City
-       </h3>
-       <ul class="space-y-0.5 mb-2">
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-star text-yellow-400 text-xs">
-         </i>
-         <span>
-          4.7/5
-         </span>
-         <span class="text-gray-400">
-          (3 reviews)
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-ruler-combined text-gray-400 text-xs">
-         </i>
-         <span>
-          Room Size: 50Sqm
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-bed text-gray-400 text-xs">
-         </i>
-         <span>
-          Bed: 2 beds
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-user-friends text-gray-400 text-xs">
-         </i>
-         <span>
-          Max: 2 adults
-         </span>
-        </li>
-       </ul>
-       <div class="flex justify-between items-center text-[10px]">
-        <span class="font-semibold">
-         $308.0
-        </span>
-        <span class="text-[#9b7e4f] cursor-pointer">
-         View Detail
-        </span>
-       </div>
-      </div>
-     </article>
-     <!-- Room 3 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-      <div class="relative">
-       <img alt="Hotel deluxe room with king bed and elegant lighting" class="w-full h-[160px] object-cover rounded-t-md" height="160" src="https://storage.googleapis.com/a1aa/image/e68038a8-90f1-40f1-d226-97d4cbe116d6.jpg" width="260"/>
-       <div class="absolute top-2 left-2 bg-pink-300 text-pink-700 text-[10px] font-semibold rounded px-2 py-0.5">
-        Deluxe Room
-       </div>
-      </div>
-      <div class="p-3 text-[11px] text-gray-700">
-       <h3 class="font-semibold text-xs mb-1">
-        Hotel Deluxe Room W King Bed
-       </h3>
-       <ul class="space-y-0.5 mb-2">
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-star text-yellow-400 text-xs">
-         </i>
-         <span>
-          1/5
-         </span>
-         <span class="text-gray-400">
-          (1 review)
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-ruler-combined text-gray-400 text-xs">
-         </i>
-         <span>
-          Room Size: 50Sqm
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-bed text-gray-400 text-xs">
-         </i>
-         <span>
-          Bed: 1 beds
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-user-friends text-gray-400 text-xs">
-         </i>
-         <span>
-          Max: 1 adults
-         </span>
-        </li>
-       </ul>
-       <div class="flex justify-between items-center text-[10px]">
-        <span class="font-semibold">
-         $198.0
-        </span>
-        <span class="text-[#9b7e4f] cursor-pointer">
-         View Detail
-        </span>
-       </div>
-      </div>
-     </article>
-     <!-- Room 4 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-      <div class="relative">
-       <img alt="Tower deluxe room with 2 queen beds and window view" class="w-full h-[160px] object-cover rounded-t-md" height="160" src="https://storage.googleapis.com/a1aa/image/8dafa291-0b01-4436-85f5-77bb929c944a.jpg" width="260"/>
-       <div class="absolute top-2 left-2 bg-pink-300 text-pink-700 text-[10px] font-semibold rounded px-2 py-0.5">
-        Deluxe Room
-       </div>
-      </div>
-      <div class="p-3 text-[11px] text-gray-700">
-       <h3 class="font-semibold text-xs mb-1">
-        Tower Deluxe Room W 2 Queen Beds
-       </h3>
-       <ul class="space-y-0.5 mb-2">
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-star text-yellow-400 text-xs">
-         </i>
-         <span>
-          0/5
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-ruler-combined text-gray-400 text-xs">
-         </i>
-         <span>
-          Room Size: 60Sqm
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-bed text-gray-400 text-xs">
-         </i>
-         <span>
-          Bed: 1 beds
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-user-friends text-gray-400 text-xs">
-         </i>
-         <span>
-          Max: 1 adults
-         </span>
-        </li>
-       </ul>
-       <div class="flex justify-between items-center text-[10px]">
-        <span class="font-semibold">
-         $176.0
-        </span>
-        <span class="text-[#9b7e4f] cursor-pointer">
-         View Detail
-        </span>
-       </div>
-      </div>
-     </article>
-    </div>
-    <!-- Arrows -->
-    <!-- <div aria-label="Room navigation arrows" class="hidden md:flex absolute top-1/2 -translate-y-1/2 right-12 space-x-2">
-     <button aria-label="Previous" class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-black hover:border-black">
-      <i class="fas fa-chevron-left">
-      </i>
-     </button>
-     <button aria-label="Next" class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-black hover:border-black">
-      <i class="fas fa-chevron-right">
-      </i>
-     </button>
-    </div> -->
-   </div>
-    <div class="relative">
-    <div class="flex space-x-6 overflow-x-auto scrollbar-hide pb-2">
-     <!-- Room 1 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-      <div class="relative">
-       <img alt="Deluxe King Room with balcony showing bed and window" class="w-full h-[160px] object-cover rounded-t-md" height="160" src="https://storage.googleapis.com/a1aa/image/85ea0e56-685a-4706-3fce-b5e8779a0511.jpg" width="260"/>
-       <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-semibold rounded px-2 py-0.5">
-        Featured
-       </div>
-       <div class="absolute top-2 right-2 bg-pink-300 text-pink-700 text-[10px] font-semibold rounded px-2 py-0.5">
-        Double Room
-       </div>
-      </div>
-      <div class="p-3 text-[11px] text-gray-700">
-       <h3 class="font-semibold text-xs mb-1">
-        Deluxe King Room With Balcony
-       </h3>
-       <ul class="space-y-0.5 mb-2">
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-star text-yellow-400 text-xs">
-         </i>
-         <span>
-          4.5/5
-         </span>
-         <span class="text-gray-400">
-          (2 reviews)
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-ruler-combined text-gray-400 text-xs">
-         </i>
-         <span>
-          Room Size: 50Sqm
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-bed text-gray-400 text-xs">
-         </i>
-         <span>
-          Bed: 1 beds
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-user-friends text-gray-400 text-xs">
-         </i>
-         <span>
-          Max: 6 adults
-         </span>
-        </li>
-       </ul>
-       <div class="flex justify-between items-center text-[10px]">
-        <span class="font-semibold">
-         $110.0
-        </span>
-        <span class="text-[#9b7e4f] cursor-pointer">
-         View Detail
-        </span>
-       </div>
-      </div>
-     </article>
-     <!-- Room 2 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-      <div class="relative">
-       <img alt="American Parks Trail End Rapid City room with bed and dark wall" class="w-full h-[160px] object-cover rounded-t-md" height="160" src="https://storage.googleapis.com/a1aa/image/f2594eb6-bd08-4a7d-e341-8fd23c56db09.jpg" width="260"/>
-       <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-semibold rounded px-2 py-0.5">
-        Featured
-       </div>
-       <div class="absolute top-2 right-2 bg-pink-300 text-pink-700 text-[10px] font-semibold rounded px-2 py-0.5">
-        Double Room
-       </div>
-      </div>
-      <div class="p-3 text-[11px] text-gray-700">
-       <h3 class="font-semibold text-xs mb-1">
-        American Parks Trail End Rapid City
-       </h3>
-       <ul class="space-y-0.5 mb-2">
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-star text-yellow-400 text-xs">
-         </i>
-         <span>
-          4.7/5
-         </span>
-         <span class="text-gray-400">
-          (3 reviews)
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-ruler-combined text-gray-400 text-xs">
-         </i>
-         <span>
-          Room Size: 50Sqm
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-bed text-gray-400 text-xs">
-         </i>
-         <span>
-          Bed: 2 beds
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-user-friends text-gray-400 text-xs">
-         </i>
-         <span>
-          Max: 2 adults
-         </span>
-        </li>
-       </ul>
-       <div class="flex justify-between items-center text-[10px]">
-        <span class="font-semibold">
-         $308.0
-        </span>
-        <span class="text-[#9b7e4f] cursor-pointer">
-         View Detail
-        </span>
-       </div>
-      </div>
-     </article>
-     <!-- Room 3 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-      <div class="relative">
-       <img alt="Hotel deluxe room with king bed and elegant lighting" class="w-full h-[160px] object-cover rounded-t-md" height="160" src="https://storage.googleapis.com/a1aa/image/e68038a8-90f1-40f1-d226-97d4cbe116d6.jpg" width="260"/>
-       <div class="absolute top-2 left-2 bg-pink-300 text-pink-700 text-[10px] font-semibold rounded px-2 py-0.5">
-        Deluxe Room
-       </div>
-      </div>
-      <div class="p-3 text-[11px] text-gray-700">
-       <h3 class="font-semibold text-xs mb-1">
-        Hotel Deluxe Room W King Bed
-       </h3>
-       <ul class="space-y-0.5 mb-2">
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-star text-yellow-400 text-xs">
-         </i>
-         <span>
-          1/5
-         </span>
-         <span class="text-gray-400">
-          (1 review)
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-ruler-combined text-gray-400 text-xs">
-         </i>
-         <span>
-          Room Size: 50Sqm
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-bed text-gray-400 text-xs">
-         </i>
-         <span>
-          Bed: 1 beds
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-user-friends text-gray-400 text-xs">
-         </i>
-         <span>
-          Max: 1 adults
-         </span>
-        </li>
-       </ul>
-       <div class="flex justify-between items-center text-[10px]">
-        <span class="font-semibold">
-         $198.0
-        </span>
-        <span class="text-[#9b7e4f] cursor-pointer">
-         View Detail
-        </span>
-       </div>
-      </div>
-     </article>
-     <!-- Room 4 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-      <div class="relative">
-       <img alt="Tower deluxe room with 2 queen beds and window view" class="w-full h-[160px] object-cover rounded-t-md" height="160" src="https://storage.googleapis.com/a1aa/image/8dafa291-0b01-4436-85f5-77bb929c944a.jpg" width="260"/>
-       <div class="absolute top-2 left-2 bg-pink-300 text-pink-700 text-[10px] font-semibold rounded px-2 py-0.5">
-        Deluxe Room
-       </div>
-      </div>
-      <div class="p-3 text-[11px] text-gray-700">
-       <h3 class="font-semibold text-xs mb-1">
-        Tower Deluxe Room W 2 Queen Beds
-       </h3>
-       <ul class="space-y-0.5 mb-2">
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-star text-yellow-400 text-xs">
-         </i>
-         <span>
-          0/5
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-ruler-combined text-gray-400 text-xs">
-         </i>
-         <span>
-          Room Size: 60Sqm
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-bed text-gray-400 text-xs">
-         </i>
-         <span>
-          Bed: 1 beds
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-user-friends text-gray-400 text-xs">
-         </i>
-         <span>
-          Max: 1 adults
-         </span>
-        </li>
-       </ul>
-       <div class="flex justify-between items-center text-[10px]">
-        <span class="font-semibold">
-         $176.0
-        </span>
-        <span class="text-[#9b7e4f] cursor-pointer">
-         View Detail
-        </span>
-       </div>
-      </div>
-     </article>
-    </div>
-    <!-- Arrows -->
-    <!-- <div aria-label="Room navigation arrows" class="hidden md:flex absolute top-1/2 -translate-y-1/2 right-12 space-x-2">
-     <button aria-label="Previous" class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-black hover:border-black">
-      <i class="fas fa-chevron-left">
-      </i>
-     </button>
-     <button aria-label="Next" class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-black hover:border-black">
-      <i class="fas fa-chevron-right">
-      </i>
-     </button>
-    </div> -->
-   </div>
-    <div class="relative">
-    <div class="flex space-x-6 overflow-x-auto scrollbar-hide pb-2">
-     <!-- Room 1 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-      <div class="relative">
-       <img alt="Deluxe King Room with balcony showing bed and window" class="w-full h-[160px] object-cover rounded-t-md" height="160" src="https://storage.googleapis.com/a1aa/image/85ea0e56-685a-4706-3fce-b5e8779a0511.jpg" width="260"/>
-       <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-semibold rounded px-2 py-0.5">
-        Featured
-       </div>
-       <div class="absolute top-2 right-2 bg-pink-300 text-pink-700 text-[10px] font-semibold rounded px-2 py-0.5">
-        Double Room
-       </div>
-      </div>
-      <div class="p-3 text-[11px] text-gray-700">
-       <h3 class="font-semibold text-xs mb-1">
-        Deluxe King Room With Balcony
-       </h3>
-       <ul class="space-y-0.5 mb-2">
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-star text-yellow-400 text-xs">
-         </i>
-         <span>
-          4.5/5
-         </span>
-         <span class="text-gray-400">
-          (2 reviews)
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-ruler-combined text-gray-400 text-xs">
-         </i>
-         <span>
-          Room Size: 50Sqm
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-bed text-gray-400 text-xs">
-         </i>
-         <span>
-          Bed: 1 beds
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-user-friends text-gray-400 text-xs">
-         </i>
-         <span>
-          Max: 6 adults
-         </span>
-        </li>
-       </ul>
-       <div class="flex justify-between items-center text-[10px]">
-        <span class="font-semibold">
-         $110.0
-        </span>
-        <span class="text-[#9b7e4f] cursor-pointer">
-         View Detail
-        </span>
-       </div>
-      </div>
-     </article>
-     <!-- Room 2 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-      <div class="relative">
-       <img alt="American Parks Trail End Rapid City room with bed and dark wall" class="w-full h-[160px] object-cover rounded-t-md" height="160" src="https://storage.googleapis.com/a1aa/image/f2594eb6-bd08-4a7d-e341-8fd23c56db09.jpg" width="260"/>
-       <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-semibold rounded px-2 py-0.5">
-        Featured
-       </div>
-       <div class="absolute top-2 right-2 bg-pink-300 text-pink-700 text-[10px] font-semibold rounded px-2 py-0.5">
-        Double Room
-       </div>
-      </div>
-      <div class="p-3 text-[11px] text-gray-700">
-       <h3 class="font-semibold text-xs mb-1">
-        American Parks Trail End Rapid City
-       </h3>
-       <ul class="space-y-0.5 mb-2">
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-star text-yellow-400 text-xs">
-         </i>
-         <span>
-          4.7/5
-         </span>
-         <span class="text-gray-400">
-          (3 reviews)
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-ruler-combined text-gray-400 text-xs">
-         </i>
-         <span>
-          Room Size: 50Sqm
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-bed text-gray-400 text-xs">
-         </i>
-         <span>
-          Bed: 2 beds
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-user-friends text-gray-400 text-xs">
-         </i>
-         <span>
-          Max: 2 adults
-         </span>
-        </li>
-       </ul>
-       <div class="flex justify-between items-center text-[10px]">
-        <span class="font-semibold">
-         $308.0
-        </span>
-        <span class="text-[#9b7e4f] cursor-pointer">
-         View Detail
-        </span>
-       </div>
-      </div>
-     </article>
-     <!-- Room 3 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-      <div class="relative">
-       <img alt="Hotel deluxe room with king bed and elegant lighting" class="w-full h-[160px] object-cover rounded-t-md" height="160" src="https://storage.googleapis.com/a1aa/image/e68038a8-90f1-40f1-d226-97d4cbe116d6.jpg" width="260"/>
-       <div class="absolute top-2 left-2 bg-pink-300 text-pink-700 text-[10px] font-semibold rounded px-2 py-0.5">
-        Deluxe Room
-       </div>
-      </div>
-      <div class="p-3 text-[11px] text-gray-700">
-       <h3 class="font-semibold text-xs mb-1">
-        Hotel Deluxe Room W King Bed
-       </h3>
-       <ul class="space-y-0.5 mb-2">
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-star text-yellow-400 text-xs">
-         </i>
-         <span>
-          1/5
-         </span>
-         <span class="text-gray-400">
-          (1 review)
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-ruler-combined text-gray-400 text-xs">
-         </i>
-         <span>
-          Room Size: 50Sqm
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-bed text-gray-400 text-xs">
-         </i>
-         <span>
-          Bed: 1 beds
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-user-friends text-gray-400 text-xs">
-         </i>
-         <span>
-          Max: 1 adults
-         </span>
-        </li>
-       </ul>
-       <div class="flex justify-between items-center text-[10px]">
-        <span class="font-semibold">
-         $198.0
-        </span>
-        <span class="text-[#9b7e4f] cursor-pointer">
-         View Detail
-        </span>
-       </div>
-      </div>
-     </article>
-     <!-- Room 4 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-      <div class="relative">
-       <img alt="Tower deluxe room with 2 queen beds and window view" class="w-full h-[160px] object-cover rounded-t-md" height="160" src="https://storage.googleapis.com/a1aa/image/8dafa291-0b01-4436-85f5-77bb929c944a.jpg" width="260"/>
-       <div class="absolute top-2 left-2 bg-pink-300 text-pink-700 text-[10px] font-semibold rounded px-2 py-0.5">
-        Deluxe Room
-       </div>
-      </div>
-      <div class="p-3 text-[11px] text-gray-700">
-       <h3 class="font-semibold text-xs mb-1">
-        Tower Deluxe Room W 2 Queen Beds
-       </h3>
-       <ul class="space-y-0.5 mb-2">
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-star text-yellow-400 text-xs">
-         </i>
-         <span>
-          0/5
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-ruler-combined text-gray-400 text-xs">
-         </i>
-         <span>
-          Room Size: 60Sqm
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-bed text-gray-400 text-xs">
-         </i>
-         <span>
-          Bed: 1 beds
-         </span>
-        </li>
-        <li class="flex items-center space-x-1">
-         <i class="fas fa-user-friends text-gray-400 text-xs">
-         </i>
-         <span>
-          Max: 1 adults
-         </span>
-        </li>
-       </ul>
-       <div class="flex justify-between items-center text-[10px]">
-        <span class="font-semibold">
-         $176.0
-        </span>
-        <span class="text-[#9b7e4f] cursor-pointer">
-         View Detail
-        </span>
-       </div>
-      </div>
-     </article>
-    </div>
-    <!-- Arrows -->
-    <!-- <div aria-label="Room navigation arrows" class="hidden md:flex absolute top-1/2 -translate-y-1/2 right-12 space-x-2">
-     <button aria-label="Previous" class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-black hover:border-black">
-      <i class="fas fa-chevron-left">
-      </i>
-     </button>
-     <button aria-label="Next" class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-black hover:border-black">
-      <i class="fas fa-chevron-right">
-      </i>
-     </button>
-    </div> -->
-   </div>
-  </section>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyProperty - Temukan Rumah Impian Anda</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Search Section */
+        .search-section {
+            background-color: #3498db;
+            padding: 2rem 1rem;
+        }
+        
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-title {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .form-group select,
+        .form-group input {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .search-button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            align-self: end;
+        }
+        
+        .search-button:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Highlight Section */
+        .highlight {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 1rem;
+            text-align: center;
+        }
+        
+        .highlight h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .highlight-stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .products h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+        
+        .product-filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .filter-group label {
+            font-weight: bold;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-location {
+            color: #3498db;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .product-location i {
+            margin-right: 0.5rem;
+        }
+        
+        .product-price {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+        
+        .product-features li {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .product-features li i {
+            margin-right: 0.5rem;
+            color: #3498db;
+        }
+        
+        /* Articles Section */
+        .articles {
+            background-color: #f9f9f9;
+            padding: 4rem 1rem;
+        }
+        
+        .articles-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .articles h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+        
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .article-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-image {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .article-content {
+            padding: 1.5rem;
+        }
+        
+        .article-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .read-more {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Ratings Section */
+        .ratings {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .ratings h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+        
+        .rating-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .rating-card {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .rating-stars {
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .rating-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .rating-author {
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 3rem 1rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-about {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-contact i {
+            margin-right: 0.5rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Media Queries untuk Mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2c3e50;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                padding: 1rem;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .highlight {
+                padding: 4rem 1rem;
+            }
+            
+            .highlight h1 {
+                font-size: 2rem;
+            }
+            
+            .highlight p {
+                font-size: 1rem;
+            }
+            
+            .stat-item {
+                min-width: 150px;
+                padding: 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .product-filters {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Header dengan Navigasi -->
+    <header>
+        <nav>
+            <div class="logo">MyProperty</div>
+            <div class="menu-toggle">☰</div>
+            <ul class="nav-links">
+                <li><a href="#produk">Properti</a></li>
+                <li><a href="#artikel">Artikel</a></li>
+                <li><a href="#testimoni">Testimoni</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-   <h2 class="text-lg font-semibold mb-6">
-   Article
-   </h2>
-   <div aria-label="Offers to inspire you" class="flex space-x-6 overflow-x-auto scrollbar-hide pb-2">
-    <!-- Offer 1 -->
-    <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Family of three walking on green grass in front of modern house" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/ee1a7fb8-2344-4f46-672e-ae7d08e8fd32.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Family Escape
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Children eat free, exciting fun activities.
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-    <!-- Offer 2 -->
-    <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Woman working on laptop with coffee cup at window table" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/075ffd40-5f84-4ae6-9fc5-6a045d856a72.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Business Trip
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Up to 20% off food and services
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-    <!-- Offer 3 -->
-    <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Couple enjoying drinks on balcony with flowers and sunset light" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/9c271e43-dcff-4cd7-2823-2715adc00f0b.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Romance
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Discount room rates, reward points
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-       <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Couple enjoying drinks on balcony with flowers and sunset light" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/9c271e43-dcff-4cd7-2823-2715adc00f0b.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Romance
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Discount room rates, reward points
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-       <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Couple enjoying drinks on balcony with flowers and sunset light" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/9c271e43-dcff-4cd7-2823-2715adc00f0b.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Romance
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Discount room rates, reward points
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-   </div>
-  </section>
-  <!-- Booking Hotel Room Banner -->
-  <section class="my-14">
-   <div class="relative rounded-xl overflow-hidden max-w-4xl mx-auto max-h-[40%] ]">
-    <img alt="Hotel room with neatly folded towels on bed and person making the bed" class="w-full h-fill object-cover rounded-xl" height="200" src="https://storage.googleapis.com/a1aa/image/ec23fdbf-d667-424b-ed22-4664b8954ccf.jpg" width="900"/>
-    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center px-6 py-8 rounded-xl">
-     <p class="text-xs text-white uppercase mb-1">
-      BOOKING HOTEL ROOM
-     </p>
-     <h3 class="text-white font-bold text-2xl sm:text-3xl mb-2">
-      -10% For Advance Booking
-     </h3>
-     <p class="text-white text-lg mb-4">
-      Use Code:
-      <span class="font-semibold text-yellow-400 tracking-wider">
-       BEHOTEL
-      </span>
-     </p>
-     <button class="bg-white text-black text-xs rounded-full px-5 py-1.5 font-semibold hover:bg-gray-200 transition">
-      Book Now
-     </button>
-    </div>
-   </div>
-  </section>
-  <!-- Journey Will Be More Interesting Section -->
- <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
-   <h2 class="text-lg font-semibold mb-6">
-    Offers To Inspire You
-   </h2>
-   <div aria-label="Offers to inspire you" class="flex space-x-6 overflow-x-auto scrollbar-hide pb-2">
-    <!-- Offer 1 -->
-    <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Family of three walking on green grass in front of modern house" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/ee1a7fb8-2344-4f46-672e-ae7d08e8fd32.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Family Escape
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Children eat free, exciting fun activities.
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-    <!-- Offer 2 -->
-    <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Woman working on laptop with coffee cup at window table" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/075ffd40-5f84-4ae6-9fc5-6a045d856a72.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Business Trip
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Up to 20% off food and services
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-    <!-- Offer 3 -->
-    <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Couple enjoying drinks on balcony with flowers and sunset light" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/9c271e43-dcff-4cd7-2823-2715adc00f0b.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Romance
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Discount room rates, reward points
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-       <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Couple enjoying drinks on balcony with flowers and sunset light" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/9c271e43-dcff-4cd7-2823-2715adc00f0b.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Romance
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Discount room rates, reward points
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-       <article class="min-w-[220px] max-w-[220px] flex-shrink-0 rounded-md overflow-hidden">
-     <img alt="Couple enjoying drinks on balcony with flowers and sunset light" class="w-full h-[140px] object-cover rounded-md" height="140" src="https://storage.googleapis.com/a1aa/image/9c271e43-dcff-4cd7-2823-2715adc00f0b.jpg" width="220"/>
-     <div class="text-center mt-2">
-      <h3 class="font-semibold text-sm">
-       Romance
-      </h3>
-      <p class="text-[10px] text-gray-500 mt-1">
-       Discount room rates, reward points
-      </p>
-      <a class="text-[10px] text-[#9b7e4f] font-semibold mt-1 inline-block" href="#">
-       Read More
-      </a>
-     </div>
-    </article>
-   </div>
-  </section>
 
-   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
-   <h2 class="text-lg font-semibold mb-6">
-    Our Rooms &amp; Suites
-   </h2>
-     <div class="flex flex-col sm:flex-row sm:space-x-8 space-y-6 sm:space-y-0 max-w-4xl mx-auto">
-    <!-- Food And Earn Points -->
-    <div class="relative rounded-xl overflow-hidden flex-1 min-w-0 bg-black text-white p-6" style="background-image: none;">
-     <img alt="Hand sprinkling spices into a pan with cooking food and steam rising" class="absolute inset-0 w-full h-full object-cover rounded-xl -z-10" height="220" src="https://storage.googleapis.com/a1aa/image/db07b449-2fc9-469b-f3b7-a2fb14d85ca3.jpg" width="450"/>
-     <div class="relative z-10">
-      <h3 class="font-bold text-lg mb-2">
-       Food And Earn Points
-      </h3>
-      <p class="text-xs mb-4 max-w-xs">
-       Travel hassle-free within Bali, visit popular attractions, or do water activities!
-      </p>
-      <button class="bg-white text-black text-xs rounded-full px-4 py-1.5 font-semibold hover:bg-gray-200 transition">
-       View More
-      </button>
-     </div>
-    </div>
-    <!-- The Year-End Party -->
-    <div class="relative rounded-xl overflow-hidden flex-1 min-w-0 bg-black text-white p-6" style="background-image: none;">
-     <img alt="Two people clinking wine glasses with red and white wine in a cozy setting" class="absolute inset-0 w-full h-full object-cover rounded-xl -z-10" height="220" src="https://storage.googleapis.com/a1aa/image/515c64b7-78e3-46d3-88fc-c79dcf4d8dac.jpg" width="450"/>
-     <div class="relative z-10">
-      <h3 class="font-bold text-lg mb-2">
-       The Year-End Party
-      </h3>
-      <p class="text-xs mb-4 max-w-xs">
-       Travel hassle-free within Bali, visit popular attractions, or do water activities!
-      </p>
-      <button class="bg-white text-black text-xs rounded-full px-4 py-1.5 font-semibold hover:bg-gray-200 transition">
-       View More
-      </button>
-     </div>
-    </div>
-   </div>
-  </section>
-
-   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-16">
-   <h2 class="text-lg font-semibold mb-6">
-   Rates
-   </h2>
-   <div class="relative">
-    <div class="flex space-x-6 overflow-x-auto scrollbar-hide pb-2">
-     <!-- Room 1 -->
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-     <div class="flex gap-4 overflow-x-auto scrollbar-hide">
-     <article class="min-w-[420px] bg-[#F1F3F4] rounded-lg p-4 flex flex-col gap-3 flex-shrink-0">
-      <div class="flex items-center gap-1 text-[#B68B4A] text-xs">
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-      </div>
-      <p class="text-xs leading-4 text-[#3B3B3B]">
-       Incredible experience at the new Stanly Ranch. Auberge Resorts never
-            disappoint but Stanly Ranch takes the level of hospitality to another
-            level...The restaurant Bear is beautifully appointed and the pool
-            cabanas, poolside beverages and food were a 10. The service was
-            impeccable.
-      </p>
-      <div class="flex items-center gap-3 mt-2">
-       <img alt="User avatar circle head and shoulders silhouette" class="w-8 h-8 rounded-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/2716fb26-a378-4d14-203b-ccda860ec843.jpg" width="32"/>
-       <div class="text-xs">
-        <p class="font-semibold text-[#3B3B3B]">
-         Name in here
-        </p>
-        <p class="text-[#7B7B7B]">
-         New York
-        </p>
-       </div>
-      </div>
-     </article>
-     <article class="min-w-[420px] bg-[#F1F3F4] rounded-lg p-4 flex flex-col gap-3 flex-shrink-0">
-      <div class="flex items-center gap-1 text-[#B68B4A] text-xs">
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-      </div>
-      <p class="text-xs leading-4 text-[#3B3B3B]">
-       Incredible experience at the new Stanly Ranch. Auberge Resorts never
-            disappoint but Stanly Ranch takes the level of hospitality to another
-            level...The restaurant Bear is beautifully appointed and the pool
-            cabanas, poolside beverages and food were a 10. The service was
-            impeccable.
-      </p>
-      <div class="flex items-center gap-3 mt-2">
-       <img alt="User avatar circle head and shoulders silhouette" class="w-8 h-8 rounded-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/2716fb26-a378-4d14-203b-ccda860ec843.jpg" width="32"/>
-       <div class="text-xs">
-        <p class="font-semibold text-[#3B3B3B]">
-         Tony Chester
-        </p>
-        <p class="text-[#7B7B7B]">
-         Front-end Developer
-        </p>
-       </div>
-      </div>
-     </article>
-    </div>
-
-     </article>
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-     <div class="flex gap-4 overflow-x-auto scrollbar-hide">
-     <article class="min-w-[420px] bg-[#F1F3F4] rounded-lg p-4 flex flex-col gap-3 flex-shrink-0">
-      <div class="flex items-center gap-1 text-[#B68B4A] text-xs">
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-      </div>
-      <p class="text-xs leading-4 text-[#3B3B3B]">
-       Incredible experience at the new Stanly Ranch. Auberge Resorts never
-            disappoint but Stanly Ranch takes the level of hospitality to another
-            level...The restaurant Bear is beautifully appointed and the pool
-            cabanas, poolside beverages and food were a 10. The service was
-            impeccable.
-      </p>
-      <div class="flex items-center gap-3 mt-2">
-       <img alt="User avatar circle head and shoulders silhouette" class="w-8 h-8 rounded-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/2716fb26-a378-4d14-203b-ccda860ec843.jpg" width="32"/>
-       <div class="text-xs">
-        <p class="font-semibold text-[#3B3B3B]">
-         Name in here
-        </p>
-        <p class="text-[#7B7B7B]">
-         New York
-        </p>
-       </div>
-      </div>
-     </article>
-     <article class="min-w-[420px] bg-[#F1F3F4] rounded-lg p-4 flex flex-col gap-3 flex-shrink-0">
-      <div class="flex items-center gap-1 text-[#B68B4A] text-xs">
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-      </div>
-      <p class="text-xs leading-4 text-[#3B3B3B]">
-       Incredible experience at the new Stanly Ranch. Auberge Resorts never
-            disappoint but Stanly Ranch takes the level of hospitality to another
-            level...The restaurant Bear is beautifully appointed and the pool
-            cabanas, poolside beverages and food were a 10. The service was
-            impeccable.
-      </p>
-      <div class="flex items-center gap-3 mt-2">
-       <img alt="User avatar circle head and shoulders silhouette" class="w-8 h-8 rounded-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/2716fb26-a378-4d14-203b-ccda860ec843.jpg" width="32"/>
-       <div class="text-xs">
-        <p class="font-semibold text-[#3B3B3B]">
-         Tony Chester
-        </p>
-        <p class="text-[#7B7B7B]">
-         Front-end Developer
-        </p>
-       </div>
-      </div>
-     </article>
-    </div>
-
-     </article>
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-     <div class="flex gap-4 overflow-x-auto scrollbar-hide">
-     <article class="min-w-[420px] bg-[#F1F3F4] rounded-lg p-4 flex flex-col gap-3 flex-shrink-0">
-      <div class="flex items-center gap-1 text-[#B68B4A] text-xs">
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-      </div>
-      <p class="text-xs leading-4 text-[#3B3B3B]">
-       Incredible experience at the new Stanly Ranch. Auberge Resorts never
-            disappoint but Stanly Ranch takes the level of hospitality to another
-            level...The restaurant Bear is beautifully appointed and the pool
-            cabanas, poolside beverages and food were a 10. The service was
-            impeccable.
-      </p>
-      <div class="flex items-center gap-3 mt-2">
-       <img alt="User avatar circle head and shoulders silhouette" class="w-8 h-8 rounded-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/2716fb26-a378-4d14-203b-ccda860ec843.jpg" width="32"/>
-       <div class="text-xs">
-        <p class="font-semibold text-[#3B3B3B]">
-         Name in here
-        </p>
-        <p class="text-[#7B7B7B]">
-         New York
-        </p>
-       </div>
-      </div>
-     </article>
-     <article class="min-w-[420px] bg-[#F1F3F4] rounded-lg p-4 flex flex-col gap-3 flex-shrink-0">
-      <div class="flex items-center gap-1 text-[#B68B4A] text-xs">
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-      </div>
-      <p class="text-xs leading-4 text-[#3B3B3B]">
-       Incredible experience at the new Stanly Ranch. Auberge Resorts never
-            disappoint but Stanly Ranch takes the level of hospitality to another
-            level...The restaurant Bear is beautifully appointed and the pool
-            cabanas, poolside beverages and food were a 10. The service was
-            impeccable.
-      </p>
-      <div class="flex items-center gap-3 mt-2">
-       <img alt="User avatar circle head and shoulders silhouette" class="w-8 h-8 rounded-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/2716fb26-a378-4d14-203b-ccda860ec843.jpg" width="32"/>
-       <div class="text-xs">
-        <p class="font-semibold text-[#3B3B3B]">
-         Tony Chester
-        </p>
-        <p class="text-[#7B7B7B]">
-         Front-end Developer
-        </p>
-       </div>
-      </div>
-     </article>
-    </div>
-
-     </article>
-     <article class="min-w-[260px] max-w-[260px] flex-shrink-0 rounded-md overflow-hidden border border-gray-200">
-     <div class="flex gap-4 overflow-x-auto scrollbar-hide">
-     <article class="min-w-[420px] bg-[#F1F3F4] rounded-lg p-4 flex flex-col gap-3 flex-shrink-0">
-      <div class="flex items-center gap-1 text-[#B68B4A] text-xs">
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-      </div>
-      <p class="text-xs leading-4 text-[#3B3B3B]">
-       Incredible experience at the new Stanly Ranch. Auberge Resorts never
-            disappoint but Stanly Ranch takes the level of hospitality to another
-            level...The restaurant Bear is beautifully appointed and the pool
-            cabanas, poolside beverages and food were a 10. The service was
-            impeccable.
-      </p>
-      <div class="flex items-center gap-3 mt-2">
-       <img alt="User avatar circle head and shoulders silhouette" class="w-8 h-8 rounded-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/2716fb26-a378-4d14-203b-ccda860ec843.jpg" width="32"/>
-       <div class="text-xs">
-        <p class="font-semibold text-[#3B3B3B]">
-         Name in here
-        </p>
-        <p class="text-[#7B7B7B]">
-         New York
-        </p>
-       </div>
-      </div>
-     </article>
-     <article class="min-w-[420px] bg-[#F1F3F4] rounded-lg p-4 flex flex-col gap-3 flex-shrink-0">
-      <div class="flex items-center gap-1 text-[#B68B4A] text-xs">
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-       <i class="fas fa-star">
-       </i>
-      </div>
-      <p class="text-xs leading-4 text-[#3B3B3B]">
-       Incredible experience at the new Stanly Ranch. Auberge Resorts never
-            disappoint but Stanly Ranch takes the level of hospitality to another
-            level...The restaurant Bear is beautifully appointed and the pool
-            cabanas, poolside beverages and food were a 10. The service was
-            impeccable.
-      </p>
-      <div class="flex items-center gap-3 mt-2">
-       <img alt="User avatar circle head and shoulders silhouette" class="w-8 h-8 rounded-full object-cover" height="32" src="https://storage.googleapis.com/a1aa/image/2716fb26-a378-4d14-203b-ccda860ec843.jpg" width="32"/>
-       <div class="text-xs">
-        <p class="font-semibold text-[#3B3B3B]">
-         Tony Chester
-        </p>
-        <p class="text-[#7B7B7B]">
-         Front-end Developer
-        </p>
-       </div>
-      </div>
-     </article>
-    </div>
-
-     </article>
-
-    </div>
-    <!-- Arrows -->
-    <!-- <div aria-label="Room navigation arrows" class="hidden md:flex absolute top-1/2 -translate-y-1/2 right-12 space-x-2">
-     <button aria-label="Previous" class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-black hover:border-black">
-      <i class="fas fa-chevron-left">
-      </i>
-     </button>
-     <button aria-label="Next" class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-black hover:border-black">
-      <i class="fas fa-chevron-right">
-      </i>
-     </button>
-    </div> -->
-   </div>
-  </section>
-<br>
- 
-
-<!-- Right side vertical buttons (opsional – jika ada tombol tambahan bisa ditaruh di sini) -->
-
-<!-- Footer -->
-<footer class="bg-gray-100 text-gray-900">
-  <div class="max-w-6xl mx-auto px-4 py-10">
-    <div class="flex flex-col md:flex-row md:justify-between md:items-start space-y-8 md:space-y-0">
-      <div class="md:w-1/4">
-        <div class="flex items-center space-x-2 mb-2">
-          <i class="fas fa-building text-lg"></i>
-          <span class="font-semibold text-sm">Properti</span>
+    <!-- Highlight Section -->
+    <section class="highlight">
+        <h1>Temukan Rumah Impian Anda</h1>
+        <p>Kami menyediakan properti berkualitas dengan harga terbaik di lokasi strategis. Mulai perjalanan properti Anda bersama kami.</p>
+        <a href="#produk" class="cta-button">Lihat Properti</a>
+        
+        <div class="highlight-stats">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div>Properti Tersedia</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div>Kepuasan Klien</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div>Tahun Pengalaman</div>
+            </div>
         </div>
-        <p class="text-xs max-w-[180px]">Don’t just get there, get there in style.</p>
-      </div>
-      <div class="md:w-3/4 grid grid-cols-2 sm:grid-cols-5 gap-6 text-xs">
-        <div>
-          <h3 class="font-semibold mb-2">Categories</h3>
-          <ul class="space-y-1 text-gray-600">
-            <li><a class="hover:underline" href="#">Deluxe Room</a></li>
-            <li><a class="hover:underline" href="#">Couple Room</a></li>
-            <li><a class="hover:underline" href="#">Family Room</a></li>
-            <li><a class="hover:underline" href="#">Single Room</a></li>
-            <li><a class="hover:underline" href="#">Twin Room</a></li>
-          </ul>
+    </section>
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <h2 class="search-title">Cari Properti Impian Anda</h2>
+            <form class="search-form" id="propertySearch">
+                <div class="form-group">
+                    <label for="location">Lokasi</label>
+                    <select id="location" name="location">
+                        <option value="">Semua Lokasi</option>
+                        <option value="jakarta">Jakarta</option>
+                        <option value="bandung">Bandung</option>
+                        <option value="surabaya">Surabaya</option>
+                        <option value="bali">Bali</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="type">Tipe Properti</label>
+                    <select id="type" name="type">
+                        <option value="">Semua Tipe</option>
+                        <option value="rumah">Rumah</option>
+                        <option value="apartemen">Apartemen</option>
+                        <option value="tanah">Tanah</option>
+                        <option value="ruko">Ruko</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="price">Harga Maksimal</label>
+                    <select id="price" name="price">
+                        <option value="">Semua Harga</option>
+                        <option value="500">Hingga Rp 500 juta</option>
+                        <option value="1000">Hingga Rp 1 Miliar</option>
+                        <option value="2000">Hingga Rp 2 Miliar</option>
+                        <option value="5000">Hingga Rp 5 Miliar</option>
+                        <option value="10000">Lebih dari Rp 5 Miliar</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bedrooms">Kamar Tidur</label>
+                    <select id="bedrooms" name="bedrooms">
+                        <option value="">Semua</option>
+                        <option value="1">1+</option>
+                        <option value="2">2+</option>
+                        <option value="3">3+</option>
+                        <option value="4">4+</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="search-button">Cari Properti</button>
+            </form>
         </div>
-        <div>
-          <h3 class="font-semibold mb-2">Information</h3>
-          <ul class="space-y-1 text-gray-600">
-            <li><a class="hover:underline" href="#">About Us</a></li>
-            <li><a class="hover:underline" href="#">Contact Us</a></li>
-            <li><a class="hover:underline" href="#">Privacy Policy</a></li>
-            <li><a class="hover:underline" href="#">Wellness &amp; Fitness</a></li>
-            <li><a class="hover:underline" href="#">Amenities &amp; Services</a></li>
-            <li><a class="hover:underline" href="#">Events &amp; Meetings</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="font-semibold mb-2">Follow Us</h3>
-          <ul class="space-y-1 text-gray-600">
-            <li><a class="hover:underline" href="#">Facebook</a></li>
-            <li><a class="hover:underline" href="#">Twitter</a></li>
-            <li><a class="hover:underline" href="#">Youtube</a></li>
-            <li><a class="hover:underline" href="#">Instagram</a></li>
-            <li><a class="hover:underline" href="#">Linkedin</a></li>
-            <li><a class="hover:underline" href="#">Pinterest</a></li>
-          </ul>
-        </div>
-        <div class="col-span-2 sm:col-span-1">
-          <h3 class="font-semibold mb-2">Payment Channels</h3>
-          <div class="flex flex-wrap gap-1 items-center">
-            <img class="h-5" src="https://storage.googleapis.com/a1aa/image/1bc99330-de12-4954-c9a6-a93e9abfe2ad.jpg" alt="American Express" />
-            <img class="h-5" src="https://storage.googleapis.com/a1aa/image/4f7c6d4e-d376-4f53-a2da-99083e5a42fa.jpg" alt="Apple Pay" />
-            <img class="h-5" src="https://storage.googleapis.com/a1aa/image/29f91082-322c-4e26-98f7-7621a64bd6a0.jpg" alt="Discover" />
-            <img class="h-5" src="https://storage.googleapis.com/a1aa/image/8c77a9f5-f3d6-4551-eba0-952d922a311d.jpg" alt="Meta" />
-            <img class="h-5" src="https://storage.googleapis.com/a1aa/image/e41550ef-3078-477f-20a5-a162f6875eb5.jpg" alt="Mastercard" />
-            <img class="h-5" src="https://storage.googleapis.com/a1aa/image/54a47146-aed8-4ce5-535a-a428ec134c48.jpg" alt="Visa" />
-            <img class="h-5" src="https://storage.googleapis.com/a1aa/image/06f6fa37-0eb2-4e9c-c8b2-701530e92a3e.jpg" alt="Google Pay" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr class="border-gray-300 my-6" />
-    <div class="flex justify-between items-center text-xs text-gray-500">
-      <span>&copy; 2025 Properti. All rights reserved.</span>
-    </div>
-  </div>
-</footer>
+    </section>
 
- </body>
+    <!-- Products Section -->
+    <section id="produk" class="products">
+        <h2>Properti Unggulan Kami</h2>
+        <div class="product-filters">
+            <div class="filter-group">
+                <label for="sort">Urutkan:</label>
+                <select id="sort" name="sort">
+                    <option value="latest">Terbaru</option>
+                    <option value="price-asc">Harga Terendah</option>
+                    <option value="price-desc">Harga Tertinggi</option>
+                    <option value="popular">Paling Populer</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="view">Tampilkan:</label>
+                <select id="view" name="view">
+                    <option value="12">12 per halaman</option>
+                    <option value="24">24 per halaman</option>
+                    <option value="36">36 per halaman</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="product-grid" id="propertyResults">
+            <!-- Properti akan ditampilkan di sini -->
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rumah Modern" class="product-image">
+                <div class="product-info">
+                    <div class="product-badge">Baru</div>
+                    <h3 class="product-title">Rumah Modern Minimalis</h3>
+                    <div class="product-location"><i class="fas fa-map-marker-alt"></i> Jakarta Selatan</div>
+                    <div class="product-price">Rp 1,2 Miliar</div>
+                    <ul class="product-features">
+                        <li><i class="fas fa-bed"></i> 3 Kamar</li>
+                        <li><i class="fas fa-bath"></i> 2 Kamar Mandi</li>
+                        <li><i class="fas fa-ruler-combined"></i> 120m²</li>
+                        <li><i class="fas fa-building"></i> 90m²</li>
+                    </ul>
+                    <a href="#" class="cta-button">Detail Properti</a>
+                </div>
+            </article>
+            
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rumah Klasik" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Rumah Klasik Mewah</h3>
+                    <div class="product-location"><i class="fas fa-map-marker-alt"></i> Bandung</div>
+                    <div class="product-price">Rp 3,5 Miliar</div>
+                    <ul class="product-features">
+                        <li><i class="fas fa-bed"></i> 5 Kamar</li>
+                        <li><i class="fas fa-bath"></i> 4 Kamar Mandi</li>
+                        <li><i class="fas fa-ruler-combined"></i> 350m²</li>
+                        <li><i class="fas fa-building"></i> 250m²</li>
+                    </ul>
+                    <a href="#" class="cta-button">Detail Properti</a>
+                </div>
+            </article>
+            
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Apartemen" class="product-image">
+                <div class="product-info">
+                    <div class="product-badge">Promo</div>
+                    <h3 class="product-title">Apartemen Premium</h3>
+                    <div class="product-location"><i class="fas fa-map-marker-alt"></i> Surabaya Pusat</div>
+                    <div class="product-price">Rp 850 Juta</div>
+                    <ul class="product-features">
+                        <li><i class="fas fa-bed"></i> 2 Kamar</li>
+                        <li><i class="fas fa-bath"></i> 2 Kamar Mandi</li>
+                        <li><i class="fas fa-ruler-combined"></i> 75m²</li>
+                        <li><i class="fas fa-swimming-pool"></i> Kolam Renang</li>
+                    </ul>
+                    <a href="#" class="cta-button">Detail Properti</a>
+                </div>
+            </article>
+            
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rumah Taman" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Rumah dengan Taman Luas</h3>
+                    <div class="product-location"><i class="fas fa-map-marker-alt"></i> Bali</div>
+                    <div class="product-price">Rp 2,8 Miliar</div>
+                    <ul class="product-features">
+                        <li><i class="fas fa-bed"></i> 4 Kamar</li>
+                        <li><i class="fas fa-bath"></i> 3 Kamar Mandi</li>
+                        <li><i class="fas fa-ruler-combined"></i> 500m²</li>
+                        <li><i class="fas fa-tree"></i> Taman 200m²</li>
+                    </ul>
+                    <a href="#" class="cta-button">Detail Properti</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="artikel" class="articles">
+        <div class="articles-container">
+            <h2>Artikel & Tips Properti</h2>
+            <div class="article-grid">
+                <article class="article-card">
+                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tips Membeli Rumah" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">5 Tips Membeli Rumah Pertama untuk Millennial</h3>
+                        <p class="article-excerpt">Pelajari strategi cerdas untuk memiliki rumah pertama tanpa stres dan sesuai budget...</p>
+                        <a href="#" class="read-more">Baca Selengkapnya →</a>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Investasi Properti" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Investasi Properti 2023: Lokasi Mana yang Potensial?</h3>
+                        <p class="article-excerpt">Analisis perkembangan harga properti dan prediksi lokasi-lokasi strategis untuk investasi...</p>
+                        <a href="#" class="read-more">Baca Selengkapnya →</a>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="KPR" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">Panduan Lengkap Mengajukan KPR dengan Bunga Terbaik</h3>
+                        <p class="article-excerpt">Simak langkah-langkah dan dokumen yang diperlukan untuk mendapatkan KPR dengan bunga kompetitif...</p>
+                        <a href="#" class="read-more">Baca Selengkapnya →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ratings Section -->
+    <section id="testimoni" class="ratings">
+        <h2>Apa Kata Klien Kami</h2>
+        <div class="rating-container">
+            <div class="rating-card">
+                <div class="rating-stars">★★★★★</div>
+                <p class="rating-text">"Pelayanan sangat profesional. Saya mendapatkan rumah impian di lokasi yang tepat sesuai budget."</p>
+                <div class="rating-author">- Bapak Andi Wijaya</div>
+            </div>
+            
+            <div class="rating-card">
+                <div class="rating-stars">★★★★★</div>
+                <p class="rating-text">"Proses transaksi cepat dan aman. Agennya sangat membantu menjelaskan semua detail properti."</p>
+                <div class="rating-author">- Ibu Sari Dewi</div>
+            </div>
+            
+            <div class="rating-card">
+                <div class="rating-stars">★★★★☆</div>
+                <p class="rating-text">"Pilihan properti sangat banyak. Saya akhirnya menemukan apartemen yang sesuai kebutuhan keluarga."</p>
+                <div class="rating-author">- Keluarga Budiman</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">MyProperty</div>
+                <p class="footer-about">Kami adalah perusahaan properti terpercaya dengan pengalaman lebih dari 15 tahun membantu klien menemukan rumah impian mereka.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Tautan Cepat</h3>
+                <ul>
+                    <li><a href="#produk">Properti</a></li>
+                    <li><a href="#artikel">Artikel</a></li>
+                    <li><a href="#testimoni">Testimoni</a></li>
+                    <li><a href="#kontak">Kontak Kami</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Layanan</h3>
+                <ul>
+                    <li><a href="#">Jual Properti</a></li>
+                    <li><a href="#">Beli Properti</a></li>
+                    <li><a href="#">Konsultasi Properti</a></li>
+                    <li><a href="#">Manajemen Properti</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Hubungi Kami</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Properti No. 123, Jakarta</p>
+                <p><i class="fas fa-phone"></i> (021) 1234-5678</p>
+                <p><i class="fas fa-envelope"></i> info@Myproperty.com</p>
+                <p><i class="fas fa-clock"></i> Senin-Jumat: 9.00-17.00</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 MyProperty. Semua hak dilindungi.
+        </div>
+    </footer>
+
+    <script>
+        // Toggle menu mobile
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Tutup menu ketika mengklik link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        // Simulasi pencarian properti
+        document.getElementById('propertySearch').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Dalam implementasi nyata, ini akan melakukan AJAX request ke server
+            alert('Fitur pencarian akan menampilkan properti sesuai filter yang dipilih. Pada implementasi nyata, ini akan melakukan request ke server.');
+            
+            // Dapatkan nilai filter
+            const location = document.getElementById('location').value;
+            const type = document.getElementById('type').value;
+            const price = document.getElementById('price').value;
+            const bedrooms = document.getElementById('bedrooms').value;
+            
+            console.log('Filter pencarian:', { location, type, price, bedrooms });
+        });
+        
+        // Filter pengurutan properti
+        document.getElementById('sort').addEventListener('change', function() {
+            const sortBy = this.value;
+            console.log('Mengurutkan berdasarkan:', sortBy);
+            
+            // Dalam implementasi nyata, ini akan mengurutkan/memuat ulang daftar properti
+        });
+        
+        // Filter tampilan per halaman
+        document.getElementById('view').addEventListener('change', function() {
+            const perPage = this.value;
+            console.log('Menampilkan:', perPage, 'properti per halaman');
+            
+            // Dalam implementasi nyata, ini akan mengubah jumlah properti yang ditampilkan
+        });
+    </script>
+</body>
 </html>
