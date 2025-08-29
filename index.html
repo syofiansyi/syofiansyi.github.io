@@ -1,859 +1,388 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyProperty - Temukan Rumah Impian Anda</title>
-    <style>
-        /* Reset CSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        /* Header */
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #3498db;
-        }
-        
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-        
-        /* Search Section */
-        .search-section {
-            background-color: #3498db;
-            padding: 2rem 1rem;
-        }
-        
-        .search-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .search-title {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        
-        .search-form {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .form-group label {
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        
-        .form-group select,
-        .form-group input {
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-        }
-        
-        .search-button {
-            background-color: #e74c3c;
-            color: white;
-            border: none;
-            padding: 0.8rem;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            align-self: end;
-        }
-        
-        .search-button:hover {
-            background-color: #c0392b;
-        }
-        
-        /* Highlight Section */
-        .highlight {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 6rem 1rem;
-            text-align: center;
-        }
-        
-        .highlight h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .highlight p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-        }
-        
-        .highlight-stats {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .stat-item {
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 1.5rem;
-            border-radius: 8px;
-            min-width: 200px;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #e74c3c;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .cta-button:hover {
-            background-color: #c0392b;
-        }
-        
-        /* Products Section */
-        .products {
-            padding: 4rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .products h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-        }
-        
-        .product-filters {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        .filter-group {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .filter-group label {
-            font-weight: bold;
-        }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .product-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .product-image {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-        }
-        
-        .product-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #e74c3c;
-            color: white;
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-        
-        .product-info {
-            padding: 1.5rem;
-            position: relative;
-        }
-        
-        .product-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .product-location {
-            color: #3498db;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .product-location i {
-            margin-right: 0.5rem;
-        }
-        
-        .product-price {
-            color: #e74c3c;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .product-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem;
-        }
-        
-        .product-features li {
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-        
-        .product-features li i {
-            margin-right: 0.5rem;
-            color: #3498db;
-        }
-        
-        /* Articles Section */
-        .articles {
-            background-color: #f9f9f9;
-            padding: 4rem 1rem;
-        }
-        
-        .articles-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .articles h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-        }
-        
-        .article-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .article-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .article-image {
-            height: 180px;
-            width: 100%;
-            object-fit: cover;
-        }
-        
-        .article-content {
-            padding: 1.5rem;
-        }
-        
-        .article-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .article-excerpt {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-        
-        .read-more {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        /* Ratings Section */
-        .ratings {
-            padding: 4rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .ratings h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-        }
-        
-        .rating-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .rating-card {
-            background-color: #f9f9f9;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .rating-stars {
-            color: #f1c40f;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .rating-text {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-        
-        .rating-author {
-            font-weight: bold;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            padding: 3rem 1rem;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-        
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-about {
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-links h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-links a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .footer-contact p {
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .footer-contact i {
-            margin-right: 0.5rem;
-            width: 20px;
-            text-align: center;
-        }
-        
-        .copyright {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Media Queries untuk Mobile */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color: #2c3e50;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                padding: 1rem;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            .search-form {
-                grid-template-columns: 1fr;
-            }
-            
-            .highlight {
-                padding: 4rem 1rem;
-            }
-            
-            .highlight h1 {
-                font-size: 2rem;
-            }
-            
-            .highlight p {
-                font-size: 1rem;
-            }
-            
-            .stat-item {
-                min-width: 150px;
-                padding: 1rem;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .product-filters {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spinner Angka 1..N (HTML+CSS+JS)</title>
+  <style>
+    :root{
+      --bg:#0f1226;
+      --card:#15193a;
+      --accent:#7c8cf8;
+      --accent-2:#37e0b2;
+      --text:#e8ecff;
+      --muted:#aab1d6;
+      --danger:#ff6b6b;
+      --ok:#20c997;
+      --shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 60px rgba(124,140,248,.15);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(124,140,248,.20), transparent 60%),
+        radial-gradient(1000px 500px at 120% 120%, rgba(55,224,178,.18), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      min-height:100svh; display:grid; place-items:center; padding:24px;
+    }
+    .app{width:min(960px, 100%);}
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)) , var(--card);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:20px; box-shadow:var(--shadow);
+      padding:20px; backdrop-filter: blur(6px);
+    }
+    h1{
+      margin:0 0 12px; font-size:clamp(20px, 2.6vw, 28px); font-weight:700; letter-spacing:.3px;
+    }
+    .sub{color:var(--muted); margin:0 0 20px; font-size:14px}
+
+    .controls{
+      display:grid; gap:12px; grid-template-columns: 1fr auto auto auto;
+      align-items:end; margin-bottom:18px;
+    }
+    .field{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07);
+      padding:12px; border-radius:14px;
+    }
+    .field label{font-size:14px; color:var(--muted)}
+    .field input[type="number"]{
+      width:120px; appearance:textfield;
+      background:#0e1130; color:var(--text); border:1px solid rgba(255,255,255,.12);
+      padding:10px 12px; border-radius:10px; font-size:16px; outline:none;
+      transition:border .2s, box-shadow .2s;
+    }
+    .field input[type="number"]:focus{border-color:var(--accent); box-shadow:0 0 0 4px rgba(124,140,248,.15)}
+    .chk{
+      display:flex; align-items:center; gap:8px; padding:10px 12px; border-radius:10px;
+      border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03);
+    }
+    .hint{font-size:12px; color:var(--muted)}
+
+    button{
+      appearance:none; border:none; cursor:pointer; border-radius:12px; padding:12px 18px; font-weight:600;
+      background:linear-gradient(180deg, var(--accent), #6373ff); color:#0e1130;
+      box-shadow:0 8px 20px rgba(124,140,248,.35); transition:transform .08s ease, filter .2s ease, opacity .2s ease;
+    }
+    button:hover{filter:saturate(1.05) brightness(1.05)}
+    button:active{transform:translateY(1px)}
+    button.secondary{
+      background:linear-gradient(180deg, #2b2f57, #1c2046);
+      color:var(--text); box-shadow:none; border:1px solid rgba(255,255,255,.08);
+    }
+    button.danger{
+      background:linear-gradient(180deg, #ff8989, #ff6b6b); color:#2a0a0a;
+      box-shadow:0 8px 20px rgba(255,107,107,.35);
+    }
+    button:disabled{opacity:.55; cursor:not-allowed; transform:none}
+
+    .display{
+      user-select:none;
+      display:flex; align-items:center; justify-content:center;
+      height:180px; border-radius:22px; margin:10px 0 16px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+        radial-gradient(120% 120% at 30% 5%, rgba(124,140,248,.1), transparent 60%),
+        #0c0f2a;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: inset 0 6px 20px rgba(0,0,0,.35), 0 6px 24px rgba(0,0,0,.35);
+      position:relative; overflow:hidden;
+    }
+    .number{
+      font-weight:800; letter-spacing:.8px;
+      font-variant-numeric: tabular-nums;
+      font-size: clamp(56px, 10vw, 96px);
+      text-shadow: 0 6px 20px rgba(0,0,0,.35);
+      transform:translateY(0);
+      transition: transform .3s cubic-bezier(.2,.8,.2,1), filter .3s;
+      filter: drop-shadow(0 0 14px rgba(124,140,248,.35));
+    }
+    .spinning .number{ animation: pulseBlur .25s linear infinite }
+    @keyframes pulseBlur {
+      0%{ filter: blur(0px) drop-shadow(0 0 10px rgba(124,140,248,.25))}
+      50%{ filter: blur(2px) drop-shadow(0 0 16px rgba(124,140,248,.35))}
+      100%{ filter: blur(0px) drop-shadow(0 0 10px rgba(124,140,248,.25))}
+    }
+    .badge{
+      position:absolute; top:12px; right:12px; font-size:12px; padding:6px 10px; border-radius:999px;
+      background:rgba(55,224,178,.12); color:var(--accent-2); border:1px solid rgba(55,224,178,.45);
+    }
+    .info{
+      display:flex; flex-wrap:wrap; gap:8px; align-items:center; color:var(--muted); font-size:13px; margin-bottom:8px;
+    }
+    .dot{width:6px; height:6px; border-radius:99px; background:var(--accent-2); display:inline-block; margin-right:6px}
+    .counter{padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)}
+
+    .history{
+      display:flex; gap:8px; flex-wrap:wrap; padding:10px; min-height:44px;
+      background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06); border-radius:14px;
+    }
+    .pill{
+      padding:6px 10px; border-radius:999px; background:linear-gradient(180deg, rgba(124,140,248,.15), rgba(124,140,248,.08));
+      border:1px solid rgba(124,140,248,.35); font-weight:600; color:var(--text); font-size:13px;
+    }
+    .warn{color:var(--danger)}
+
+    @media (max-width:640px){
+      .controls{grid-template-columns: 1fr 1fr; grid-auto-rows: auto}
+      .controls .buttons{grid-column: 1 / -1; display:flex; gap:10px; flex-wrap:wrap}
+    }
+  </style>
 </head>
 <body>
-    <!-- Header dengan Navigasi -->
-    <header>
-        <nav>
-            <div class="logo">MyProperty</div>
-            <div class="menu-toggle">☰</div>
-            <ul class="nav-links">
-                <li><a href="#produk">Properti</a></li>
-                <li><a href="#artikel">Artikel</a></li>
-                <li><a href="#testimoni">Testimoni</a></li>
-                <li><a href="#kontak">Kontak</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="app">
+    <div class="card">
+      <h1>Spinner Angka</h1>
+      <p class="sub">Acak angka dari <strong>1</strong> sampai nilai maksimum yang kamu tentukan (min 1, max 2000). Opsional: hindari duplikasi.</p>
 
+      <div class="controls">
+        <div class="field" style="grid-column: 1 / span 1;">
+          <label for="maxInput">Maksimum</label>
+          <input id="maxInput" type="number" inputmode="numeric" min="1" max="2000" value="100" />
+          <span class="hint">rentang: 1 … N</span>
+        </div>
 
-    <!-- Highlight Section -->
-    <section class="highlight">
-        <h1>Temukan Rumah Impian Anda</h1>
-        <p>Kami menyediakan properti berkualitas dengan harga terbaik di lokasi strategis. Mulai perjalanan properti Anda bersama kami.</p>
-        <a href="#produk" class="cta-button">Lihat Properti</a>
-        
-        <div class="highlight-stats">
-            <div class="stat-item">
-                <div class="stat-number">500+</div>
-                <div>Properti Tersedia</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">98%</div>
-                <div>Kepuasan Klien</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">15+</div>
-                <div>Tahun Pengalaman</div>
-            </div>
-        </div>
-    </section>
-    <!-- Search Section -->
-    <section class="search-section">
-        <div class="search-container">
-            <h2 class="search-title">Cari Properti Impian Anda</h2>
-            <form class="search-form" id="propertySearch">
-                <div class="form-group">
-                    <label for="location">Lokasi</label>
-                    <select id="location" name="location">
-                        <option value="">Semua Lokasi</option>
-                        <option value="jakarta">Jakarta</option>
-                        <option value="bandung">Bandung</option>
-                        <option value="surabaya">Surabaya</option>
-                        <option value="bali">Bali</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="type">Tipe Properti</label>
-                    <select id="type" name="type">
-                        <option value="">Semua Tipe</option>
-                        <option value="rumah">Rumah</option>
-                        <option value="apartemen">Apartemen</option>
-                        <option value="tanah">Tanah</option>
-                        <option value="ruko">Ruko</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="price">Harga Maksimal</label>
-                    <select id="price" name="price">
-                        <option value="">Semua Harga</option>
-                        <option value="500">Hingga Rp 500 juta</option>
-                        <option value="1000">Hingga Rp 1 Miliar</option>
-                        <option value="2000">Hingga Rp 2 Miliar</option>
-                        <option value="5000">Hingga Rp 5 Miliar</option>
-                        <option value="10000">Lebih dari Rp 5 Miliar</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="bedrooms">Kamar Tidur</label>
-                    <select id="bedrooms" name="bedrooms">
-                        <option value="">Semua</option>
-                        <option value="1">1+</option>
-                        <option value="2">2+</option>
-                        <option value="3">3+</option>
-                        <option value="4">4+</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="search-button">Cari Properti</button>
-            </form>
-        </div>
-    </section>
+        <label class="chk">
+          <input id="noRepeat" type="checkbox" />
+          <span>Tanpa duplikasi</span>
+        </label>
 
-    <!-- Products Section -->
-    <section id="produk" class="products">
-        <h2>Properti Unggulan Kami</h2>
-        <div class="product-filters">
-            <div class="filter-group">
-                <label for="sort">Urutkan:</label>
-                <select id="sort" name="sort">
-                    <option value="latest">Terbaru</option>
-                    <option value="price-asc">Harga Terendah</option>
-                    <option value="price-desc">Harga Tertinggi</option>
-                    <option value="popular">Paling Populer</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="view">Tampilkan:</label>
-                <select id="view" name="view">
-                    <option value="12">12 per halaman</option>
-                    <option value="24">24 per halaman</option>
-                    <option value="36">36 per halaman</option>
-                </select>
-            </div>
+        <div class="buttons" style="display:flex; gap:10px;">
+          <button id="spinBtn" aria-label="Mulai spin">Spin</button>
+          <button id="stopBtn" class="secondary" disabled>Stop</button>
+          <button id="resetBtn" class="danger" title="Hapus riwayat & duplikasi">Reset</button>
         </div>
-        
-        <div class="product-grid" id="propertyResults">
-            <!-- Properti akan ditampilkan di sini -->
-            <article class="product-card">
-                <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rumah Modern" class="product-image">
-                <div class="product-info">
-                    <div class="product-badge">Baru</div>
-                    <h3 class="product-title">Rumah Modern Minimalis</h3>
-                    <div class="product-location"><i class="fas fa-map-marker-alt"></i> Jakarta Selatan</div>
-                    <div class="product-price">Rp 1,2 Miliar</div>
-                    <ul class="product-features">
-                        <li><i class="fas fa-bed"></i> 3 Kamar</li>
-                        <li><i class="fas fa-bath"></i> 2 Kamar Mandi</li>
-                        <li><i class="fas fa-ruler-combined"></i> 120m²</li>
-                        <li><i class="fas fa-building"></i> 90m²</li>
-                    </ul>
-                    <a href="detail.html" class="cta-button">Detail Properti</a>
-                </div>
-            </article>
-            
-            <article class="product-card">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rumah Klasik" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-title">Rumah Klasik Mewah</h3>
-                    <div class="product-location"><i class="fas fa-map-marker-alt"></i> Bandung</div>
-                    <div class="product-price">Rp 3,5 Miliar</div>
-                    <ul class="product-features">
-                        <li><i class="fas fa-bed"></i> 5 Kamar</li>
-                        <li><i class="fas fa-bath"></i> 4 Kamar Mandi</li>
-                        <li><i class="fas fa-ruler-combined"></i> 350m²</li>
-                        <li><i class="fas fa-building"></i> 250m²</li>
-                    </ul>
-                    <a href="detail.html" class="cta-button">Detail Properti</a>
-                </div>
-            </article>
-            
-            <article class="product-card">
-                <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Apartemen" class="product-image">
-                <div class="product-info">
-                    <div class="product-badge">Promo</div>
-                    <h3 class="product-title">Apartemen Premium</h3>
-                    <div class="product-location"><i class="fas fa-map-marker-alt"></i> Surabaya Pusat</div>
-                    <div class="product-price">Rp 850 Juta</div>
-                    <ul class="product-features">
-                        <li><i class="fas fa-bed"></i> 2 Kamar</li>
-                        <li><i class="fas fa-bath"></i> 2 Kamar Mandi</li>
-                        <li><i class="fas fa-ruler-combined"></i> 75m²</li>
-                        <li><i class="fas fa-swimming-pool"></i> Kolam Renang</li>
-                    </ul>
-                    <a href="detail.html" class="cta-button">Detail Properti</a>
-                </div>
-            </article>
-            
-            <article class="product-card">
-                <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Rumah Taman" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-title">Rumah dengan Taman Luas</h3>
-                    <div class="product-location"><i class="fas fa-map-marker-alt"></i> Bali</div>
-                    <div class="product-price">Rp 2,8 Miliar</div>
-                    <ul class="product-features">
-                        <li><i class="fas fa-bed"></i> 4 Kamar</li>
-                        <li><i class="fas fa-bath"></i> 3 Kamar Mandi</li>
-                        <li><i class="fas fa-ruler-combined"></i> 500m²</li>
-                        <li><i class="fas fa-tree"></i> Taman 200m²</li>
-                    </ul>
-                    <a href="detail.html" class="cta-button">Detail Properti</a>
-                </div>
-            </article>
-        </div>
-    </section>
+      </div>
 
-    <!-- Articles Section -->
-    <section id="artikel" class="articles">
-        <div class="articles-container">
-            <h2>Artikel & Tips Properti</h2>
-            <div class="article-grid">
-                <article class="article-card">
-                    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tips Membeli Rumah" class="article-image">
-                    <div class="article-content">
-                        <h3 class="article-title">5 Tips Membeli Rumah Pertama untuk Millennial</h3>
-                        <p class="article-excerpt">Pelajari strategi cerdas untuk memiliki rumah pertama tanpa stres dan sesuai budget...</p>
-                        <a href="#" class="read-more">Baca Selengkapnya →</a>
-                    </div>
-                </article>
-                
-                <article class="article-card">
-                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Investasi Properti" class="article-image">
-                    <div class="article-content">
-                        <h3 class="article-title">Investasi Properti 2023: Lokasi Mana yang Potensial?</h3>
-                        <p class="article-excerpt">Analisis perkembangan harga properti dan prediksi lokasi-lokasi strategis untuk investasi...</p>
-                        <a href="#" class="read-more">Baca Selengkapnya →</a>
-                    </div>
-                </article>
-                
-                <article class="article-card">
-                    <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="KPR" class="article-image">
-                    <div class="article-content">
-                        <h3 class="article-title">Panduan Lengkap Mengajukan KPR dengan Bunga Terbaik</h3>
-                        <p class="article-excerpt">Simak langkah-langkah dan dokumen yang diperlukan untuk mendapatkan KPR dengan bunga kompetitif...</p>
-                        <a href="#" class="read-more">Baca Selengkapnya →</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+      <div id="display" class="display" aria-live="polite">
+        <div class="badge">1 … <span id="maxBadge">100</span></div>
+        <div id="number" class="number">—</div>
+      </div>
 
-    <!-- Ratings Section -->
-    <section id="testimoni" class="ratings">
-        <h2>Apa Kata Klien Kami</h2>
-        <div class="rating-container">
-            <div class="rating-card">
-                <div class="rating-stars">★★★★★</div>
-                <p class="rating-text">"Pelayanan sangat profesional. Saya mendapatkan rumah impian di lokasi yang tepat sesuai budget."</p>
-                <div class="rating-author">- Bapak Andi Wijaya</div>
-            </div>
-            
-            <div class="rating-card">
-                <div class="rating-stars">★★★★★</div>
-                <p class="rating-text">"Proses transaksi cepat dan aman. Agennya sangat membantu menjelaskan semua detail properti."</p>
-                <div class="rating-author">- Ibu Sari Dewi</div>
-            </div>
-            
-            <div class="rating-card">
-                <div class="rating-stars">★★★★☆</div>
-                <p class="rating-text">"Pilihan properti sangat banyak. Saya akhirnya menemukan apartemen yang sesuai kebutuhan keluarga."</p>
-                <div class="rating-author">- Keluarga Budiman</div>
-            </div>
-        </div>
-    </section>
+      <div class="info">
+        <span><span class="dot"></span><span id="statusText">Siap diacak.</span></span>
+        <span class="counter" id="remainWrap" style="display:none;">Sisa unik: <strong id="remainCount">0</strong></span>
+      </div>
 
-    <!-- Footer -->
-    <footer id="kontak">
-        <div class="footer-container">
-            <div class="footer-about">
-                <div class="footer-logo">MyProperty</div>
-                <p class="footer-about">Kami adalah perusahaan properti terpercaya dengan pengalaman lebih dari 15 tahun membantu klien menemukan rumah impian mereka.</p>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Tautan Cepat</h3>
-                <ul>
-                    <li><a href="#produk">Properti</a></li>
-                    <li><a href="#artikel">Artikel</a></li>
-                    <li><a href="#testimoni">Testimoni</a></li>
-                    <li><a href="#kontak">Kontak Kami</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Layanan</h3>
-                <ul>
-                    <li><a href="#">Jual Properti</a></li>
-                    <li><a href="#">Beli Properti</a></li>
-                    <li><a href="#">Konsultasi Properti</a></li>
-                    <li><a href="#">Manajemen Properti</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-contact">
-                <h3>Hubungi Kami</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Jl. Properti No. 123, Jakarta</p>
-                <p><i class="fas fa-phone"></i> 0895424010064</p>
-                <p><i class="fas fa-envelope"></i> info@Myproperty.com</p>
-                <p><i class="fas fa-clock"></i> Senin-Jumat: 9.00-17.00</p>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            &copy; 2023 MyProperty. Semua hak dilindungi.
-        </div>
-    </footer>
+      <div class="history" id="history" aria-label="Riwayat hasil"></div>
+    </div>
+  </div>
 
-    <script>
-        // Toggle menu mobile
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-        
-        // Tutup menu ketika mengklik link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.querySelector('.nav-links').classList.remove('active');
-            });
-        });
-        
-        // Simulasi pencarian properti
-        document.getElementById('propertySearch').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Dalam implementasi nyata, ini akan melakukan AJAX request ke server
-            alert('Fitur pencarian akan menampilkan properti sesuai filter yang dipilih. Pada implementasi nyata, ini akan melakukan request ke server.');
-            
-            // Dapatkan nilai filter
-            const location = document.getElementById('location').value;
-            const type = document.getElementById('type').value;
-            const price = document.getElementById('price').value;
-            const bedrooms = document.getElementById('bedrooms').value;
-            
-            console.log('Filter pencarian:', { location, type, price, bedrooms });
-        });
-        
-        // Filter pengurutan properti
-        document.getElementById('sort').addEventListener('change', function() {
-            const sortBy = this.value;
-            console.log('Mengurutkan berdasarkan:', sortBy);
-            
-            // Dalam implementasi nyata, ini akan mengurutkan/memuat ulang daftar properti
-        });
-        
-        // Filter tampilan per halaman
-        document.getElementById('view').addEventListener('change', function() {
-            const perPage = this.value;
-            console.log('Menampilkan:', perPage, 'properti per halaman');
-            
-            // Dalam implementasi nyata, ini akan mengubah jumlah properti yang ditampilkan
-        });
-    </script>
+  <script>
+    // ---- Utility ----
+    const $ = sel => document.querySelector(sel);
+    const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+    const maxInput    = $("#maxInput");
+    const noRepeatCB  = $("#noRepeat");
+    const spinBtn     = $("#spinBtn");
+    const stopBtn     = $("#stopBtn");
+    const resetBtn    = $("#resetBtn");
+    const numberEl    = $("#number");
+    const display     = $("#display");
+    const maxBadge    = $("#maxBadge");
+    const statusText  = $("#statusText");
+    const historyBox  = $("#history");
+    const remainWrap  = $("#remainWrap");
+    const remainCount = $("#remainCount");
+
+    let drawn = new Set();           // untuk mode tanpa duplikasi
+    let spinning = false;
+    let scheduledTimeouts = [];
+    let finalResult = null;
+
+    // Easing: easeOutCubic
+    const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+    function clampMax(v){
+      if (isNaN(v)) v = 1;
+      v = Math.floor(v);
+      if (v < 1) v = 1;
+      if (v > 2000) v = 2000;
+      return v;
+    }
+
+    function updateMaxBadge(){
+      const max = clampMax(+maxInput.value);
+      maxBadge.textContent = String(max);
+      updateRemain(max);
+    }
+
+    function updateRemain(max){
+      if (!noRepeatCB.checked){
+        remainWrap.style.display = "none";
+        return;
+      }
+      // buang angka drawn yang > max
+      drawn.forEach(n => { if (n > max) drawn.delete(n); });
+      const remain = Math.max(0, max - drawn.size);
+      remainWrap.style.display = "inline-flex";
+      remainCount.textContent = remain;
+    }
+
+    function randomInt1N(n){
+      return 1 + Math.floor(Math.random() * n);
+    }
+
+    function pickFinal(max, unique){
+      if (!unique) return randomInt1N(max);
+      if (drawn.size >= max) return null;
+      // Pilih angka yang belum pernah keluar
+      // Cara cepat saat rentang kecil (<=2000): buat daftar tersisa
+      const available = [];
+      for (let i=1;i<=max;i++) if (!drawn.has(i)) available.push(i);
+      const idx = Math.floor(Math.random()*available.length);
+      return available[idx];
+    }
+
+    function setStatus(msg, colorClass){
+      statusText.textContent = msg;
+      statusText.classList.toggle('warn', !!colorClass);
+    }
+
+    function addHistory(n){
+      const pill = document.createElement('div');
+      pill.className = 'pill';
+      pill.textContent = n;
+      historyBox.prepend(pill);
+      // batasi 30 item agar ringan
+      const pills = $$(".history .pill");
+      if (pills.length > 30) pills.slice(30).forEach(p => p.remove());
+    }
+
+    function clearScheduled(){
+      scheduledTimeouts.forEach(id => clearTimeout(id));
+      scheduledTimeouts = [];
+    }
+
+    function setSpinningUI(isSpin){
+      spinning = isSpin;
+      display.classList.toggle("spinning", isSpin);
+      spinBtn.disabled = isSpin;
+      stopBtn.disabled = !isSpin;
+      maxInput.disabled = isSpin;
+      noRepeatCB.disabled = isSpin;
+      resetBtn.disabled = isSpin;
+    }
+
+    function spin(){
+      const max = clampMax(+maxInput.value);
+      maxInput.value = max;
+      updateMaxBadge();
+
+      // Validasi mode unik
+      if (noRepeatCB.checked && drawn.size >= max){
+        setStatus("Semua angka sudah terambil. Tekan Reset untuk mulai ulang.", "warn");
+        flashBorder(display, 'danger');
+        return;
+      }
+
+      // Tentukan hasil akhir terlebih dahulu (agar Stop bisa langsung menuju hasil ini)
+      finalResult = pickFinal(max, noRepeatCB.checked);
+      if (finalResult === null){
+        setStatus("Tidak ada angka tersisa.", "warn");
+        return;
+      }
+
+      setSpinningUI(true);
+      setStatus("Mengacak…");
+
+      const duration = 1800;     // ms
+      const steps = 45;          // jumlah update sebelum hasil akhir
+      const start = performance.now();
+
+      // Jadwalkan update angka dengan easing (melambat)
+      clearScheduled();
+      for (let i = 0; i < steps; i++){
+        const t = i / (steps - 1);
+        const when = start + easeOutCubic(t) * duration;
+        const id = setTimeout(() => {
+          numberEl.textContent = String(randomInt1N(max));
+        }, Math.max(0, when - performance.now()));
+        scheduledTimeouts.push(id);
+      }
+
+      // Tampilkan hasil final
+      const endId = setTimeout(() => {
+        clearScheduled();
+        revealFinal(finalResult);
+      }, duration + 30);
+      scheduledTimeouts.push(endId);
+    }
+
+    function revealFinal(n){
+      numberEl.textContent = String(n);
+      numberEl.style.transform = 'translateY(-6px)';
+      setTimeout(()=> numberEl.style.transform = 'translateY(0)', 160);
+
+      addHistory(n);
+
+      if (noRepeatCB.checked){
+        drawn.add(n);
+      }
+
+      updateRemain(clampMax(+maxInput.value));
+      setStatus("Selesai!");
+      flashBorder(display, 'ok');
+
+      setSpinningUI(false);
+    }
+
+    function stopEarly(){
+      if (!spinning) return;
+      clearScheduled();
+      // Jika belum punya finalResult (seharusnya sudah ada), fallback angka random
+      const max = clampMax(+maxInput.value);
+      if (finalResult == null) finalResult = pickFinal(max, noRepeatCB.checked) ?? randomInt1N(max);
+      revealFinal(finalResult);
+    }
+
+    function resetAll(){
+      clearScheduled();
+      setSpinningUI(false);
+      drawn.clear();
+      historyBox.innerHTML = "";
+      numberEl.textContent = "—";
+      updateRemain(clampMax(+maxInput.value));
+      setStatus("Di-reset. Siap diacak lagi.");
+      flashBorder(display, null);
+    }
+
+    function flashBorder(el, type){
+      el.style.boxShadow = el.style.boxShadow; // trigger reflow
+      el.style.outline = type === 'danger' ? '2px solid var(--danger)'
+                      : type === 'ok'     ? '2px solid var(--accent-2)'
+                                          : '1px solid rgba(255,255,255,.08)';
+      // hilangkan highlight pelan
+      setTimeout(()=>{ el.style.outline = '1px solid rgba(255,255,255,.08)'; }, 700);
+    }
+
+    // ---- Listeners ----
+    spinBtn.addEventListener('click', spin);
+    stopBtn.addEventListener('click', stopEarly);
+    resetBtn.addEventListener('click', resetAll);
+
+    maxInput.addEventListener('input', () => {
+      const v = clampMax(+maxInput.value);
+      // tidak langsung memaksa saat mengetik, tapi batasi jika lewat
+      if (+maxInput.value > 2000) maxInput.value = 2000;
+      if (+maxInput.value < 1 || !maxInput.value) maxInput.value = 1;
+      updateMaxBadge();
+      updateRemain(v);
+      setStatus("Siap diacak.");
+    });
+
+    noRepeatCB.addEventListener('change', () => {
+      updateRemain(clampMax(+maxInput.value));
+      setStatus(noRepeatCB.checked ? "Mode tanpa duplikasi aktif." : "Mode tanpa duplikasi nonaktif.");
+    });
+
+    // Init
+    updateMaxBadge();
+    updateRemain(+maxInput.value);
+  </script>
 </body>
 </html>
