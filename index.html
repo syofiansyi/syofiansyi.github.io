@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Spinner</title>
+  <title>Spinner Made In Syofian At 23.46 PM</title>
   <style>
     :root{
       --bg:#0f1226;
@@ -136,12 +136,13 @@
   <div class="app">
     <div class="card">
       <h1>Spinner Angka</h1>
-      <p class="sub">Acak angka dari <strong>1</strong> sampai nilai maksimum yang kamu tentukan (min 1, max 2000). Opsional: hindari duplikasi.</p>
+      <p class="sub">Acak angka dari <strong>1</strong> sampai nilai maksimum yang kamu tentukan (min 1, max 5000). Opsional: hindari duplikasi.</p>
 
       <div class="controls">
         <div class="field" style="grid-column: 1 / span 1;">
           <label for="maxInput">Maksimum</label>
-          <input id="maxInput" type="number" inputmode="numeric" min="1" max="2000" value="100" />
+          <!-- ganti max ke 5000 -->
+          <input id="maxInput" type="number" inputmode="numeric" min="1" max="5000" value="100" />
           <span class="hint">rentang: 1 … N</span>
         </div>
 
@@ -201,7 +202,7 @@
       if (isNaN(v)) v = 1;
       v = Math.floor(v);
       if (v < 1) v = 1;
-      if (v > 2000) v = 2000;
+      if (v > 5000) v = 5000; // batas baru
       return v;
     }
 
@@ -230,8 +231,7 @@
     function pickFinal(max, unique){
       if (!unique) return randomInt1N(max);
       if (drawn.size >= max) return null;
-      // Pilih angka yang belum pernah keluar
-      // Cara cepat saat rentang kecil (<=2000): buat daftar tersisa
+      // Buat daftar tersisa (range ≤ 5000, masih sangat ringan)
       const available = [];
       for (let i=1;i<=max;i++) if (!drawn.has(i)) available.push(i);
       const idx = Math.floor(Math.random()*available.length);
@@ -273,14 +273,12 @@
       maxInput.value = max;
       updateMaxBadge();
 
-      // Validasi mode unik
       if (noRepeatCB.checked && drawn.size >= max){
         setStatus("Semua angka sudah terambil. Tekan Reset untuk mulai ulang.", "warn");
         flashBorder(display, 'danger');
         return;
       }
 
-      // Tentukan hasil akhir terlebih dahulu (agar Stop bisa langsung menuju hasil ini)
       finalResult = pickFinal(max, noRepeatCB.checked);
       if (finalResult === null){
         setStatus("Tidak ada angka tersisa.", "warn");
@@ -294,7 +292,6 @@
       const steps = 45;          // jumlah update sebelum hasil akhir
       const start = performance.now();
 
-      // Jadwalkan update angka dengan easing (melambat)
       clearScheduled();
       for (let i = 0; i < steps; i++){
         const t = i / (steps - 1);
@@ -305,7 +302,6 @@
         scheduledTimeouts.push(id);
       }
 
-      // Tampilkan hasil final
       const endId = setTimeout(() => {
         clearScheduled();
         revealFinal(finalResult);
@@ -334,7 +330,6 @@
     function stopEarly(){
       if (!spinning) return;
       clearScheduled();
-      // Jika belum punya finalResult (seharusnya sudah ada), fallback angka random
       const max = clampMax(+maxInput.value);
       if (finalResult == null) finalResult = pickFinal(max, noRepeatCB.checked) ?? randomInt1N(max);
       revealFinal(finalResult);
@@ -356,7 +351,6 @@
       el.style.outline = type === 'danger' ? '2px solid var(--danger)'
                       : type === 'ok'     ? '2px solid var(--accent-2)'
                                           : '1px solid rgba(255,255,255,.08)';
-      // hilangkan highlight pelan
       setTimeout(()=>{ el.style.outline = '1px solid rgba(255,255,255,.08)'; }, 700);
     }
 
@@ -367,8 +361,7 @@
 
     maxInput.addEventListener('input', () => {
       const v = clampMax(+maxInput.value);
-      // tidak langsung memaksa saat mengetik, tapi batasi jika lewat
-      if (+maxInput.value > 2000) maxInput.value = 2000;
+      if (+maxInput.value > 5000) maxInput.value = 5000; // batas baru
       if (+maxInput.value < 1 || !maxInput.value) maxInput.value = 1;
       updateMaxBadge();
       updateRemain(v);
